@@ -263,29 +263,27 @@ if analyze_button and uploaded_file and job_description:
     chart_col1, chart_col2, chart_col3 = st.columns([1,3,1])
 
     with chart_col2:
-       st.pyplot(
-           fig,
-           use_container_width=False
-    )
-
-    
+        st.pyplot(
+            fig,
+            use_container_width=False
+        )
 
     st.subheader("Final Recommendation")
 
-if skill_match_score >= 80 and match_score >= 50:
+    if skill_match_score >= 80:
 
-    st.success(
-        "Excellent match! Candidate is highly suitable for this role."
-    )
+        st.success(
+            "Excellent match! Candidate has most of the required skills for this role."
+        )
 
-elif skill_match_score >= 60:
+    elif skill_match_score >= 50:
 
-    st.warning(
-        "Good skill match, but resume content could align better with the job description."
-    )
+        st.warning(
+            "Good match. Candidate meets several requirements but can improve further."
+        )
 
-else:
+    else:
 
-    st.error(
-        "Low match score. Resume needs improvement for this role."
-    )
+        st.error(
+            "Resume needs improvement. Several required skills are missing."
+        )
