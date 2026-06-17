@@ -272,20 +272,20 @@ if analyze_button and uploaded_file and job_description:
 
     st.subheader("Final Recommendation")
 
-    if match_score >= 75:
+if skill_match_score >= 80 and match_score >= 50:
 
-        st.success(
-            "Excellent match! Candidate is highly suitable for this role."
-        )
+    st.success(
+        "Excellent match! Candidate is highly suitable for this role."
+    )
 
-    elif match_score >= 50:
+elif skill_match_score >= 60:
 
-        st.warning(
-            "Moderate match score. Candidate meets some requirements but can improve further."
-        )
+    st.warning(
+        "Good skill match, but resume content could align better with the job description."
+    )
 
-    else:
+else:
 
-        st.error(
-            "Low match score. Resume needs improvement for this role."
-        )
+    st.error(
+        "Low match score. Resume needs improvement for this role."
+    )
